@@ -1,0 +1,15 @@
+version: '3' # require
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"  # docker 內部 80 指向 localhost 的80
+    volumes:
+      - "./nginx:/etc/nginx/conf.d"
+      # - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - web
+  web:
+    build: ./
+    ports:
+      - "1337:1337"

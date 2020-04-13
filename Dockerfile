@@ -15,6 +15,6 @@ RUN npm install yarn -g
 # container 對外開放的 port
 EXPOSE 1337
 
-RUN yarn 
+RUN yarn
 
 CMD yarn start
